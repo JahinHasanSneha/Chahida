@@ -80,7 +80,7 @@ export default function Home(){
 
       <div className="grid">
         <div className="vstack">
-          <div className="card" style={{ padding: 14 }}>
+          <div className="card" style={{ padding: 14, background: "rgba(220, 190, 220, 0.7)"}}>
             <div className="hstack" style={{ justifyContent:"space-between" }}>
               <div style={{ fontWeight: 900, letterSpacing:"-0.02em" }}>Feed</div>
               <div className="hstack">
