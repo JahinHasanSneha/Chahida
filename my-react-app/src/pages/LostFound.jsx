@@ -10,15 +10,20 @@ export default function LostFound(){
 function CategoryWrapper({ tag }){
   // redirect-like UI (simple)
   return (
-    <div className="card" style={{ padding: 16 }}>
-      <div style={{ fontWeight: 900, fontSize: 18 }}>Lost & Found</div>
-      <div className="muted small" style={{ marginTop: 6 }}>
-        Open the Lost & Found category from quick links: <b>/category/Lost%20%26%20Found</b>
-      </div>
-      <div className="hr" />
-      <div className="muted small">
-        Tip: For demo, search “ID Card”, “keys”, “wallet”, “USB”.
-      </div>
+    <>
+    <div>
+      <p>
+       Lost or Found something? CHAHIDA has your back...
+       </p>
+       <div>
+        <div className="lost&found">
+          found posts:
+        </div>
+        <div>
+          Lost posts:
+        </div>
+       </div>
     </div>
+    </>
   );
 }
