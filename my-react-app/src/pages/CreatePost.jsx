@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 
 const STATUS = ["Open","In progress","Resolved"];
 const URGENCY = ["Low","Medium","High"];
-
+//Can y See??
 export default function CreatePost(){
   const nav = useNavigate();
   const { user, isAuthed } = useAuth();
