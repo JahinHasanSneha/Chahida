@@ -10,7 +10,7 @@ import { initials } from "../lib/utils";
 
 const nav = [
   ["Home","/"],
-  ["Directory","/directory"],
+  ["Blood Bank","/blood-bank"],
   ["Lost & Found","/lost-found"],
   ["Buy & Sell","/buy-sell"],
   ["Buddy","/buddy"],

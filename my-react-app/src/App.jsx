@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import AuthLogin from "./pages/AuthLogin";
 import AuthSignup from "./pages/AuthSignup";
 import Profile from "./pages/Profile";
-import Directory from "./pages/Directory";
+import BloodBank from "./pages/blood-bank";
 import PostDetails from "./pages/PostDetails";
 import CreatePost from "./pages/CreatePost";
 import Category from "./pages/Category";
@@ -27,7 +27,7 @@ export default function App(){
             <Route path="/login" element={<AuthLogin />} />
             <Route path="/signup" element={<AuthSignup />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/directory" element={<Directory />} />
+            <Route path="/blood-bank" element={<BloodBank />} />
             <Route path="/post/:id" element={<PostDetails />} />
             <Route path="/create" element={<CreatePost />} />
             <Route path="/category/:tag" element={<Category />} />

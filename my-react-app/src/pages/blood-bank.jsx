@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 import EmptyState from "../components/EmptyState";
 import { META } from "../data/seed";
 
-export default function Directory(){
+export default function BloodBank(){
   const db = useMemo(() => getDB(), []);
   const [q, setQ] = useState("");
   const [hall, setHall] = useState("All");
