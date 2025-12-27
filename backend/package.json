@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Node.js backend for React Vite project",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
