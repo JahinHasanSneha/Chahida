@@ -9,7 +9,9 @@ const lostFoundSchema = new mongoose.Schema(
     },
     title: { type: String, required: true },
     description: String,
-    location: String
+    location: String,
+    image: String,
+    contact: String
     
   },
   { timestamps: true }

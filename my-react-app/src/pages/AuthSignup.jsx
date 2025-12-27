@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { upsertUser } from "../lib/db";
 import { META } from "../data/seed";
 import { useAuth } from "../context/AuthContext";
+import { api } from "../lib/api";
 
 export default function AuthSignup(){
   const nav = useNavigate();
@@ -14,6 +15,7 @@ export default function AuthSignup(){
     hall: META.HALLS[0],
     room: "",
     email: "",
+    password: "",
     mobile: "",
     bloodGroup: "B+",
     levelTerm: "L1T1",
@@ -23,14 +25,24 @@ export default function AuthSignup(){
 
   const set = (k,v) => setForm(s => ({ ...s, [k]: v }));
 
-  const submit = () => {
+  const submit = async () => {
     if(!form.name.trim() || !form.email.trim()){
       alert("Name and Email are required.");
       return;
     }
-    upsertUser({ ...form });
-    login(form.email.trim());
-    nav("/profile");
+
+    try {
+      // try backend register then backend login to obtain token
+      await api.post("/api/auth/register", { name: form.name, email: form.email, password: form.password });
+      await login(form.email.trim(), form.password);
+      nav("/profile");
+    } catch (err) {
+      console.error(err);
+      // fallback to local/mock behavior
+      upsertUser({ ...form });
+      login(form.email.trim());
+      nav("/profile");
+    }
   };
 
   return (
@@ -65,6 +77,9 @@ export default function AuthSignup(){
         <div className="vstack">
           <label className="small muted">Email</label>
           <input className="input" value={form.email} onChange={(e)=>set("email", e.target.value)} placeholder="you@uni.edu" />
+
+          <label className="small muted">Password</label>
+          <input type="password" className="input" value={form.password} onChange={(e)=>set("password", e.target.value)} placeholder="Choose a password" />
 
           <label className="small muted">Mobile</label>
           <input className="input" value={form.mobile} onChange={(e)=>set("mobile", e.target.value)} placeholder="01XXXXXXXXX" />

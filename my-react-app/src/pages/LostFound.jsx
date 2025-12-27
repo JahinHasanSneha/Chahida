@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../lostfound.css";
+import { api } from "../lib/api";
 
 export default function LostAndFound() {
   const [items, setItems] = useState([]);
@@ -26,24 +27,39 @@ export default function LostAndFound() {
 
  
   useEffect(() => {
-    fetch("http://localhost:5000/api/lost-found")
-      .then(res => res.json())
-      .then(data => setItems(data))
-      .catch(console.error);
+    (async () => {
+      try {
+        const data = await api.get("/api/lost-found");
+        setItems(data || []);
+      } catch (err) {
+        console.error(err);
+      }
+    })();
   }, []);
 
  
   const postItem = async () => {
     if (!form.title || !form.location) return;
 
-    setItems(prev => [{ ...form, id: Date.now() }, ...prev]);
+    // optimistic UI update
+    const temp = { ...form, _id: `temp-${Date.now()}` };
+    setItems((prev) => [temp, ...prev]);
+
+    try {
+      const saved = await api.post("/api/lost-found", form);
+      // replace temp with saved
+      setItems((prev) => prev.map((p) => (p._id === temp._id ? saved : p)));
+    } catch (err) {
+      console.error(err);
+      // leave optimistic entry but mark or notify in real app
+    }
 
     setForm({
       type: "lost",
       title: "",
       location: "",
       description: "",
-      image: ""
+      image: "",
     });
   };
 
@@ -92,8 +108,11 @@ export default function LostAndFound() {
           onChange={(e) => {
             const file = e.target.files[0];
             if (!file) return;
-            const imageURL = URL.createObjectURL(file);
-            setForm(prev => ({ ...prev, image: imageURL }));
+            const reader = new FileReader();
+            reader.onload = () => {
+              setForm((prev) => ({ ...prev, image: reader.result }));
+            };
+            reader.readAsDataURL(file);
           }}
         />
 
