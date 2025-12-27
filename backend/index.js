@@ -21,7 +21,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-// Mongoose settings
+// Ensure Mongoose uses recommended settings
 mongoose.set('strictQuery', false);
 
 const startServer = async () => {
