@@ -66,7 +66,7 @@ export default function CreatePost(){
       <div className="card" style={{ padding: 16 }}>
         <div style={{ fontWeight: 900, fontSize: 18, letterSpacing:"-0.02em" }}>Create a post</div>
         <div className="muted small" style={{ marginTop: 6 }}>
-          This writes into localStorage, so it feels like a real app even with mock data.
+          Need something urgently? Create a post and let your campus community help out.
         </div>
 
         {!isAuthed && (
