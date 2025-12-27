@@ -61,9 +61,9 @@ We’ve got you. In every case.</i></b>
 
 <b>Run Locally</b><br>
 git clone https://github.com/BuruzL/Chahida.git<br>
-cd Chahida
-npm install
-npm run dev
+cd Chahida<br>
+npm install<br>
+npm run dev<br>
 
 <b>Demo Tips</b>
 
