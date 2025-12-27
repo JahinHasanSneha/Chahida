@@ -9,7 +9,7 @@ Chahida is a unified web application designed to simplify campus life by bringin
 Whether you are searching for urgent assistance, academic collaboration, or entrepreneurial opportunities, Chahida connects you to what you need, when you need it.
 
 ❓ <h3><b>Why Chahida?</b></h3>
-Are you tired of searching through multiple platforms just to find help?
+Are you tired of searching through multiple platforms just to find help?<br>
 Do you have a limited personal network and struggle to get timely support?
 
 Chahida is built to solve this problem.
@@ -27,7 +27,7 @@ Instantly access verified blood donor contacts in emergency situations.
 
 Post lost items or found belongings and reconnect them with their rightful owners.
 
-🛒 ##<b>Student Marketplace</b>
+🛒 <b>Student Marketplace</b>
 
 Buy, sell, and promote your services — empowering students to start their side hustle with ease.
 
@@ -45,8 +45,8 @@ All you need to unlock the full power of Chahida is a simple account registratio
 
 🧠 <b>Built With Purpose</b>
 
-Chahida is more than an application — it is a community.
-We’ve got you. In every case.
+<b><i>Chahida is more than an application — it is a community.<br>
+We’ve got you. In every case.</i></b>
 
 
 <b>Tech Stack</b>
@@ -59,17 +59,17 @@ We’ve got you. In every case.
   <li>MongoDB</li>
 </ul>
 
-<b>Run Locally</b>
-git clone https://github.com/BuruzL/Chahida.git
+<b>Run Locally</b><br>
+git clone https://github.com/BuruzL/Chahida.git<br>
 cd Chahida
 npm install
 npm run dev
 
 <b>Demo Tips</b>
 
-Login using any email from Director or create your own account
+Login using any email from Director or create your own account<br>
 
-Try searching: B+, CSE110, wallet, Nazrul Hall
+(Try searching: B+, CSE110, wallet, Nazrul Hall)
 
 Reset demo data from Settings
 
